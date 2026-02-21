@@ -1,148 +1,119 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Movie53 | コント動画制作チーム</title>
-  <meta name="description" content="Movie53はオリジナルコント動画を制作するクリエイティブチーム。笑いを届けます。">
-  <meta name="keywords" content="Movie53, コント, 動画制作, エンタメ">
-  <meta name="google-site-verification" content="qG4dxwsoRjU6cT8X44Usj9yU5Xb6RApaUXBHHrBRSzo" />
+<title>Movie53 | コント動画</title>
+<meta name="description" content="Movie53はオリジナルコント動画を制作するエンタメサイト。">
+<meta name="keywords" content="Movie53, コント, 動画, エンタメ">
+<meta name="google-site-verification" content="qG4dxwsoRjU6cT8X44Usj9yU5Xb6RApaUXBHHrBRSzo" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+body{background:#141414;color:white;overflow-x:hidden;}
 
-    body {
-      background:#0f0f0f;
-      color:white;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
+header{
+  height:90vh;
+  background:linear-gradient(to top, #141414 10%, transparent 60%),
+             url('https://images.unsplash.com/photo-1505685296765-3a2736de412f') center/cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:8%;
+}
 
-    header {
-      height:90vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-      background:linear-gradient(135deg,#000,#1c1c1c);
-    }
+header h1{
+  font-size:4rem;
+  font-weight:900;
+}
 
-    header h1 {
-      font-size:4rem;
-      font-weight:900;
-      letter-spacing:4px;
-      animation: fadeInDown 1.5s ease forwards;
-    }
+header p{
+  margin-top:20px;
+  max-width:500px;
+  font-size:1.2rem;
+  color:#ddd;
+}
 
-    header p {
-      margin-top:20px;
-      font-size:1.3rem;
-      color:#ff3366;
-      animation: fadeInUp 2s ease forwards;
-    }
+section{
+  padding:40px 5%;
+}
 
-    section {
-      padding:100px 12%;
-      text-align:center;
-      opacity:0;
-      transform:translateY(50px);
-      transition: all 1s ease;
-    }
+h2{
+  margin-bottom:20px;
+  font-size:1.5rem;
+}
 
-    section.show {
-      opacity:1;
-      transform:translateY(0);
-    }
+.row{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  scroll-behavior:smooth;
+}
 
-    h2 {
-      font-size:2.2rem;
-      margin-bottom:30px;
-      color:#ff3366;
-    }
+.row::-webkit-scrollbar{
+  display:none;
+}
 
-    .box {
-      max-width:800px;
-      margin:auto;
-      font-size:1.1rem;
-      color:#ccc;
-    }
+.card{
+  min-width:250px;
+  height:140px;
+  background:#222;
+  border-radius:8px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:700;
+  transition:0.3s;
+  cursor:pointer;
+}
 
-    footer {
-      background:#000;
-      padding:25px;
-      text-align:center;
-      color:#777;
-      opacity:0;
-      transform:translateY(50px);
-      transition: all 1s ease;
-    }
+.card:hover{
+  transform:scale(1.1);
+  background:#e50914;
+}
 
-    footer.show {
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    @keyframes fadeInDown {
-      from { opacity:0; transform:translateY(-40px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity:0; transform:translateY(40px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-  </style>
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Movie53</h1>
-  <p>笑いを創るコント動画チーム</p>
+  <p>笑いを創るコント動画チーム。日常あるあるから爆笑ネタまで。</p>
 </header>
 
 <section>
-  <h2>Movie53とは</h2>
-  <div class="box">
-    Movie53はオリジナルコント動画を制作するエンタメチームです。
-    日常のあるあるネタやオリジナルストーリーを通して、
-    見る人に笑いと楽しさを届けます。
+  <h2>🔥 人気コント</h2>
+  <div class="row">
+    <div class="card">学校あるある</div>
+    <div class="card">友達との会話</div>
+    <div class="card">コンビニネタ</div>
+    <div class="card">先生シリーズ</div>
+    <div class="card">ショート爆笑集</div>
   </div>
 </section>
 
 <section>
-  <h2>制作内容</h2>
-  <div class="box">
-    ・学校あるあるコント<br>
-    ・友達との日常ネタ<br>
-    ・ショートギャグ動画<br>
-    ・オリジナルストーリーコント
+  <h2>🎬 最新動画</h2>
+  <div class="row">
+    <div class="card">新作コント①</div>
+    <div class="card">新作コント②</div>
+    <div class="card">新作コント③</div>
+    <div class="card">新作コント④</div>
   </div>
 </section>
 
 <footer>
-  © 2026 Movie53
+© 2026 Movie53
 </footer>
-
-<script>
-  const sections = document.querySelectorAll("section, footer");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
 
 </body>
 </html>
