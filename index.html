@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Movie53 | コント動画制作チーム</title>
-  <meta name="description" content="Movie53はオリジナルコント動画を制作するクリエイティブチーム。笑いをテーマに様々なネタを制作しています。">
-  <meta name="keywords" content="Movie53, コント, 動画制作, エンタメ, 面白い">
-
-  <!-- Google Search Console 確認タグ -->
+  <meta name="description" content="Movie53はオリジナルコント動画を制作するクリエイティブチーム。笑いを届けます。">
+  <meta name="keywords" content="Movie53, コント, 動画制作, エンタメ">
   <meta name="google-site-verification" content="qG4dxwsoRjU6cT8X44Usj9yU5Xb6RApaUXBHHrBRSzo" />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -20,6 +18,7 @@
       background:#0f0f0f;
       color:white;
       line-height:1.6;
+      overflow-x:hidden;
     }
 
     header {
@@ -36,17 +35,27 @@
       font-size:4rem;
       font-weight:900;
       letter-spacing:4px;
+      animation: fadeInDown 1.5s ease forwards;
     }
 
     header p {
       margin-top:20px;
       font-size:1.3rem;
       color:#ff3366;
+      animation: fadeInUp 2s ease forwards;
     }
 
     section {
-      padding:80px 12%;
+      padding:100px 12%;
       text-align:center;
+      opacity:0;
+      transform:translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity:1;
+      transform:translateY(0);
     }
 
     h2 {
@@ -67,6 +76,24 @@
       padding:25px;
       text-align:center;
       color:#777;
+      opacity:0;
+      transform:translateY(50px);
+      transition: all 1s ease;
+    }
+
+    footer.show {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-40px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(40px); }
+      to { opacity:1; transform:translateY(0); }
     }
   </style>
 </head>
@@ -83,7 +110,7 @@
   <div class="box">
     Movie53はオリジナルコント動画を制作するエンタメチームです。
     日常のあるあるネタやオリジナルストーリーを通して、
-    見る人に笑いと楽しさを届けることを目標に活動しています。
+    見る人に笑いと楽しさを届けます。
   </div>
 </section>
 
@@ -97,17 +124,25 @@
   </div>
 </section>
 
-<section>
-  <h2>お問い合わせ</h2>
-  <div class="box">
-    コラボや制作依頼は今後受付予定です。<br>
-    最新情報は随時更新していきます。
-  </div>
-</section>
-
 <footer>
   © 2026 Movie53
 </footer>
+
+<script>
+  const sections = document.querySelectorAll("section, footer");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
