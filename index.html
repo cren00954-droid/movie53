@@ -4,80 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Movie53 | コント動画</title>
-<meta name="description" content="Movie53はオリジナルコント動画を制作するエンタメサイト。">
-<meta name="keywords" content="Movie53, コント, 動画, エンタメ">
+<title>Movie53 | コント動画チーム</title>
+<meta name="description" content="Movie53はオリジナルコント動画を制作するエンタメチーム。笑いを届けるクリエイター集団です。">
+<meta name="keywords" content="Movie53, コント, エンタメ, 動画制作">
 <meta name="google-site-verification" content="qG4dxwsoRjU6cT8X44Usj9yU5Xb6RApaUXBHHrBRSzo" />
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-body{background:#141414;color:white;overflow-x:hidden;}
+
+body{
+  background:#f9f9f9;
+  color:#111;
+}
 
 header{
-  height:90vh;
-  background:linear-gradient(to top, #141414 10%, transparent 60%),
-             url('https://images.unsplash.com/photo-1505685296765-3a2736de412f') center/cover;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:white;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding-left:8%;
+  align-items:center;
+  padding:0 20px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  z-index:1000;
 }
 
 header h1{
-  font-size:4rem;
-  font-weight:900;
-}
-
-header p{
-  margin-top:20px;
-  max-width:500px;
-  font-size:1.2rem;
-  color:#ddd;
-}
-
-section{
-  padding:40px 5%;
-}
-
-h2{
-  margin-bottom:20px;
   font-size:1.5rem;
+  font-weight:800;
+  color:#cc0000;
 }
 
-.row{
+.container{
   display:flex;
-  overflow-x:auto;
-  gap:15px;
-  scroll-behavior:smooth;
+  margin-top:60px;
 }
 
-.row::-webkit-scrollbar{
-  display:none;
+.sidebar{
+  width:220px;
+  background:white;
+  height:100vh;
+  padding:20px;
+  border-right:1px solid #ddd;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar li{
+  padding:12px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-bottom:8px;
+  transition:0.2s;
+}
+
+.sidebar li:hover{
+  background:#eee;
+}
+
+.content{
+  flex:1;
+  padding:30px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
 }
 
 .card{
-  min-width:250px;
-  height:140px;
-  background:#222;
-  border-radius:8px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight:700;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.08);
   transition:0.3s;
-  cursor:pointer;
 }
 
 .card:hover{
-  transform:scale(1.1);
-  background:#e50914;
+  transform:translateY(-5px);
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:1.2rem;
+}
+
+.card p{
+  font-size:0.95rem;
+  color:#555;
 }
 
 footer{
+  margin-top:40px;
   text-align:center;
-  padding:30px;
   color:#777;
 }
 </style>
@@ -87,33 +113,60 @@ footer{
 
 <header>
   <h1>Movie53</h1>
-  <p>笑いを創るコント動画チーム。日常あるあるから爆笑ネタまで。</p>
 </header>
 
-<section>
-  <h2>🔥 人気コント</h2>
-  <div class="row">
-    <div class="card">学校あるある</div>
-    <div class="card">友達との会話</div>
-    <div class="card">コンビニネタ</div>
-    <div class="card">先生シリーズ</div>
-    <div class="card">ショート爆笑集</div>
-  </div>
-</section>
+<div class="container">
 
-<section>
-  <h2>🎬 最新動画</h2>
-  <div class="row">
-    <div class="card">新作コント①</div>
-    <div class="card">新作コント②</div>
-    <div class="card">新作コント③</div>
-    <div class="card">新作コント④</div>
+  <div class="sidebar">
+    <ul>
+      <li>🏠 ホーム</li>
+      <li>🔥 人気ネタ</li>
+      <li>🎬 最新コント</li>
+      <li>📅 更新情報</li>
+      <li>📩 お問い合わせ</li>
+    </ul>
   </div>
-</section>
 
-<footer>
-© 2026 Movie53
-</footer>
+  <div class="content">
+
+    <h2>Movie53について</h2>
+    <p style="margin:15px 0 30px 0; color:#555;">
+      Movie53はオリジナルコント動画を制作するエンタメチームです。
+      日常の「あるある」やオリジナルストーリーを題材に、
+      見る人が思わず笑ってしまう作品を制作しています。
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>学校あるあるシリーズ</h3>
+        <p>誰もが経験したことのある学校生活をテーマにした人気シリーズ。</p>
+      </div>
+
+      <div class="card">
+        <h3>友達との爆笑会話</h3>
+        <p>日常の何気ない会話をコント風に再現。</p>
+      </div>
+
+      <div class="card">
+        <h3>ショートギャグ集</h3>
+        <p>短時間で笑えるショートネタを配信。</p>
+      </div>
+
+      <div class="card">
+        <h3>オリジナルストーリー</h3>
+        <p>Movie53独自の世界観で作られるオリジナルコント。</p>
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 Movie53
+    </footer>
+
+  </div>
+
+</div>
 
 </body>
 </html>
