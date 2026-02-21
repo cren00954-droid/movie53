@@ -1,12 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>Movie53公式サイト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Movie53 | コント動画クリエイター</title>
+  <meta name="description" content="Movie53はコント動画・ショート動画を制作するエンタメチャンネルです。笑える動画を毎週配信中！">
+  <meta name="keywords" content="Movie53, コント, 面白い動画, ショート動画, エンタメ">
+
+  <!-- Google Search Console 確認タグ -->
   <meta name="google-site-verification" content="qG4dxwsoRjU6cT8X44Usj9yU5Xb6RApaUXBHHrBRSzo" />
-  <meta name="description" content="Movie53の公式サイトです">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: white;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #1f1f1f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #ff3366;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 35px;
+      background: #ff004c;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3366;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+    }
+
+    footer {
+      background: #000;
+      padding: 30px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
+
+<header>
   <h1>Movie53</h1>
-  <p>ここはMovie53の公式ページです。</p>
+  <p>笑いを届けるコント動画チャンネル</p>
+  <a href="#videos" class="btn">動画を見る</a>
+</header>
+
+<section id="videos">
+  <h2>最新コント動画</h2>
+  <div class="videos">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>Movie53について</h2>
+  <p style="color:#aaa; max-width:700px; margin:auto;">
+    Movie53はコント・ショートネタ・エンタメ動画を制作するクリエイターチームです。
+    「笑い」をテーマに、日常のあるあるやオリジナルネタを配信しています。
+  </p>
+</section>
+
+<footer>
+  © 2026 Movie53
+</footer>
+
 </body>
 </html>
