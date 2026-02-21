@@ -7,18 +7,21 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
-
 body{
-  background:#111;
+  background:#0f0f0f;
   color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
   overflow:hidden;
 }
 
+/* ===== パズル画面 ===== */
 #puzzleScreen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#111;
   text-align:center;
 }
 
@@ -49,14 +52,12 @@ body{
   transform:scale(1.1);
 }
 
+/* ===== メインサイト ===== */
 #mainSite{
   position:absolute;
   inset:0;
+  overflow-y:auto;
   background:#0f0f0f;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
   opacity:0;
   pointer-events:none;
   transition:1s;
@@ -67,50 +68,140 @@ body{
   pointer-events:auto;
 }
 
-h1{
-  font-size:3rem;
-  margin-bottom:20px;
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-p{
+.hero h1{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.hero p{
   color:#aaa;
+}
+
+.section{
+  padding:100px 10%;
+  text-align:center;
+}
+
+.section h2{
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+.section p{
+  color:#bbb;
+  max-width:700px;
+  margin:auto;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  background:#1c1c1c;
+  padding:25px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#666;
 }
 </style>
 </head>
 <body>
 
+<!-- ===== パズル ===== -->
 <div id="puzzleScreen">
-  <h2>文字を正しく並べてください</h2>
+  <h2>文字を正しく並べてサイトを開こう</h2>
   <div id="letters"></div>
 </div>
 
+<!-- ===== メインサイト ===== -->
 <div id="mainSite">
-  <h1>Movie53</h1>
-  <p>笑いを創るコント動画チーム</p>
+
+  <div class="hero">
+    <h1>Movie53</h1>
+    <p>笑いを創るコント動画チーム</p>
+  </div>
+
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      Movie53はオリジナルコント動画を制作するクリエイターチーム。
+      日常のあるあるネタや独自の発想から生まれるストーリーで、
+      視聴者に笑いと楽しさを届けます。
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Our Style</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>日常コント</h3>
+        <p>学校や友達との会話をテーマにした共感型ネタ。</p>
+      </div>
+      <div class="card">
+        <h3>オリジナル企画</h3>
+        <p>Movie53ならではの世界観で展開する作品。</p>
+      </div>
+      <div class="card">
+        <h3>ショートギャグ</h3>
+        <p>短時間で笑えるテンポ重視の爆笑コンテンツ。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact</h2>
+    <p>お仕事のご依頼・コラボなどは各種SNSからご連絡ください。</p>
+  </section>
+
+  <footer>
+    © 2026 Movie53
+  </footer>
+
 </div>
 
 <script>
 const correct = "MOVIE53".split("");
 let shuffled = [...correct].sort(()=>Math.random()-0.5);
 const container = document.getElementById("letters");
-
 let selectedIndex = null;
 
 function render(){
-  container.innerHTML = "";
+  container.innerHTML="";
   shuffled.forEach((letter,index)=>{
-    const div = document.createElement("div");
+    const div=document.createElement("div");
     div.className="letter";
     div.textContent=letter;
 
-    div.addEventListener("click", ()=>{
-      if(selectedIndex === null){
-        selectedIndex = index;
+    div.addEventListener("click",()=>{
+      if(selectedIndex===null){
+        selectedIndex=index;
         div.classList.add("active");
-      } else {
-        [shuffled[selectedIndex], shuffled[index]] =
-        [shuffled[index], shuffled[selectedIndex]];
-        selectedIndex = null;
+      }else{
+        [shuffled[selectedIndex],shuffled[index]]=
+        [shuffled[index],shuffled[selectedIndex]];
+        selectedIndex=null;
         render();
         checkWin();
       }
@@ -121,9 +212,10 @@ function render(){
 }
 
 function checkWin(){
-  if(shuffled.join("") === correct.join("")){
+  if(shuffled.join("")===correct.join("")){
     document.getElementById("puzzleScreen").style.display="none";
     document.getElementById("mainSite").classList.add("show");
+    document.body.style.overflow="auto";
   }
 }
 
